@@ -1,3 +1,6 @@
+import random
+
+
 def answer(h, q):
     p = []
     num = 2**h - 1
@@ -36,4 +39,14 @@ print(ans)
 print()
 
 ans = answer(30, [19, 14, 28])
+print(ans)
+
+print()
+
+ans = answer(30, random.sample(range(1000000000), 10000))
+print(ans)
+
+print()
+
+ans = answer(30, [1] * 10000)
 print(ans)
