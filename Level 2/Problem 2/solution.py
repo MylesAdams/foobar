@@ -18,12 +18,14 @@ def answer(n, b):
     return cycle_size
 
 
+# Change from base 10 to any base -> Returns number backwords
 def to_any_base(num, b):
     num_b = []
     to_any_base_recur(num_b, num, b)
     return num_b
 
 
+# Recursive function for changing from base 10 to any base
 def to_any_base_recur(num_b, num, b):
     num_b.append(str(num % b))
     new_num = num // b
@@ -34,6 +36,7 @@ def to_any_base_recur(num_b, num, b):
     to_any_base_recur(num_b, new_num, b)
 
 
+# Change from base 10 to any base and prepend zeros to keep correct length -> Returns number normal
 def change_base_and_fix_length(num, b, k):
     num_b = to_any_base(num, b)
 
@@ -43,14 +46,17 @@ def change_base_and_fix_length(num, b, k):
     return ''.join(num_b[::-1])
 
 
+# Return digits of num in ascending order
 def num_digits_in_ascending(num):
     return ''.join(sorted(num))
 
 
+# Return digits of num in descending order
 def num_digits_in_descending(num):
     return ''.join(sorted(num, reverse=True))
 
 
+# Calculate z -> x and y start in base b, and z is returned in base b
 def calculate_z(num, b, k):
     x = int(num_digits_in_descending(num), b)
     y = int(num_digits_in_ascending(num), b)
